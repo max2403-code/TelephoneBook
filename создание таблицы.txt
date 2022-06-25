@@ -1,0 +1,13 @@
+CREATE TABLE tbcontacts
+(
+    Id SERIAL PRIMARY KEY,
+    searchname text,
+    FirstName CHARACTER VARYING(50),
+    LastName CHARACTER VARYING(50),
+    MiddleName CHARACTER VARYING(50),
+    PersonalPhoneNumber text,
+    WorkPhoneNumber text,
+    Email text,
+    DayOfBirth CHARACTER VARYING(10),
+    Note text
+)

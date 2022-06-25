@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "O7arTz31EwMas8r+xhqjhTIU4F25escNcMJJkcPeQkGGGIiKfDWJejVSgh4wzyDlkUH+J3Qm2qA4JD2dA9rvdg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\muxxx\\source\\repos\\TelephoneBook\\TelephoneBook.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\muxxx\\.nuget\\packages\\npgsql\\6.0.4\\npgsql.6.0.4.nupkg.sha512",
+    "C:\\Users\\muxxx\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
