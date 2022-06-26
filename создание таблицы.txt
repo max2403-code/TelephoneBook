@@ -1,3 +1,4 @@
+CREATE DATABASE TelephoneBook;
 CREATE TABLE tbcontacts
 (
     Id SERIAL PRIMARY KEY,
