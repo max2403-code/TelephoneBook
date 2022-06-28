@@ -11,12 +11,11 @@ namespace TelephoneBook
 {
     public class OperationsDB
     {
-        private const string connectString = "Host=localhost;Port=5432;Database=TelephoneBook;Username=postgres;Password=user";
         private readonly NpgsqlConnection connection;
 
-        public OperationsDB()
+        public OperationsDB(string userName, string password)
         {
-            connection = new NpgsqlConnection(connectString);
+            connection = new NpgsqlConnection($"Host=localhost;Port=5432;Database=telephonebook;Username={userName};Password={password}");
         }
 
         public List<(string, int)> FindContacts(string searchname)

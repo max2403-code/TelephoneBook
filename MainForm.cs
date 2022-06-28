@@ -15,14 +15,17 @@ namespace TelephoneBook
     {
         private TextBox nameLine { get; }
         private Timer searchTimer { get; }
-        private OperationsDB dataBase { get; }
+        private OperationsDB dataBase { get; set; }
         private Control lastControl { get; set; }
         private string lastNameText { get; set; }
         private List<Control> temporaryControl { get; }
+        private Button signIn { get; }
+        private Button addButton { get; }
+
 
         public MainForm()
         {
-            dataBase = new OperationsDB();
+            //dataBase = new OperationsDB();
             temporaryControl = new List<Control>();
             AutoScroll = true;
             FormBorderStyle = FormBorderStyle.Fixed3D;
@@ -35,14 +38,15 @@ namespace TelephoneBook
             searchTimer = new Timer();
             searchTimer.Interval = 10;
             searchTimer.Tick += SearchTimer_Tick; 
-            searchTimer.Start();
-            var addButton = new Button();
+            //searchTimer.Start();
+            addButton = new Button();
             addButton.Height = nameLine.Height;
             addButton.AutoSize = true;
             addButton.Click += AddButtonOnClick;
             addButton.Location = new Point(nameLine.Location.X + nameLine.Width + 5, nameLine.Location.Y);
             addButton.Text = "Добавить";
             Controls.Add(addButton);
+            addButton.Enabled = false;
             var closeButton = new Button();
             closeButton.Height = nameLine.Height;
             closeButton.AutoSize = true;
@@ -51,6 +55,29 @@ namespace TelephoneBook
             closeButton.Text = "Выход";
             Controls.Add(closeButton);
 
+            signIn = new Button();
+            signIn.Location = new Point(nameLine.Location.X, nameLine.Location.Y + nameLine.Height + 5);
+            signIn.AutoSize = true;
+            signIn.Click += SignIn_Click;
+            signIn.Text = "Войти в базу данных";
+            Controls.Add(signIn);
+
+
+            
+        }
+
+        private void SignIn_Click(object sender, EventArgs e)
+        {
+            var loginForm = new LoginDBForm(this);
+            loginForm.ShowDialog();
+        }
+
+        public void AssignDB(string userName, string password)
+        {
+            dataBase = new OperationsDB(userName, password);
+            addButton.Enabled = true;
+            Controls.Remove(signIn);
+            searchTimer.Start();
         }
 
         private void CloseButton_Click(object sender, EventArgs e)

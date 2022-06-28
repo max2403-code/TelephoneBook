@@ -19,3 +19,4 @@ C:\Users\muxxx\source\repos\TelephoneBook\obj\Debug\net5.0-windows\TelephoneBook
 C:\Users\muxxx\source\repos\TelephoneBook\obj\Debug\net5.0-windows\ref\TelephoneBook.dll
 C:\Users\muxxx\source\repos\TelephoneBook\obj\Debug\net5.0-windows\TelephoneBook.pdb
 C:\Users\muxxx\source\repos\TelephoneBook\obj\Debug\net5.0-windows\TelephoneBook.genruntimeconfig.cache
+C:\Users\muxxx\source\repos\TelephoneBook\obj\Debug\net5.0-windows\TelephoneBook.LoginDBForm.resources
